@@ -7,3 +7,6 @@
 4. **Posicionamiento horizontal de la Pizza**: Si la pizza debe ir exactamente en el centro, **NO** usar `translate-x`. Confiar plenamente en el centrado natural que otorga Flexbox (`flex justify-center`). Los offsets manuales solo causan dolores de cabeza al quitar animaciones que tiraban hacia los lados.
 5. **Animaciones Flotantes Controladas**: La animación de `float` (en `globals.css`) debe ser muy sutil (ej. `translateY(-5px)`). Si se le da demasiada altura, los elementos terminan chocando con el contenido que tienen arriba en pantallas pequeñas.
 6. **Cumplimiento Estricto de Tareas**: NUNCA hacer cambios estructurales ni de orden de componentes que el usuario no haya solicitado de forma explícita. Actuar siempre como un asistente ceñido exclusivamente a las órdenes dadas sin asumir rediseños no pedidos.
+
+## Deploy (Netlify)
+7. **Secrets scanning y NEXT_PUBLIC_***: Netlify falla el build si detecta valores de env vars en el output. Las `NEXT_PUBLIC_*` siempre se incrustan en el bundle, así que deben listarse en `SECRETS_SCAN_OMIT_KEYS` en `netlify.toml`. Al agregar una nueva `NEXT_PUBLIC_*`, sumarla ahí. Nunca omitir secretos reales (service_role).
