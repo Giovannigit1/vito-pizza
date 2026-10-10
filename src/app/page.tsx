@@ -392,7 +392,7 @@ export default async function CatalogPage() {
           <div className="w-24 h-1.5 rounded-full bg-gradient-to-r from-[#008c45] via-[#ffffff] to-[#ce2b37] mb-8"></div>
 
           <div className="text-sm font-bold opacity-70">
-            © {new Date().getFullYear()} Vito Pizza. Todos los derechos reservados.
+            © 2026 Vito Pizza. Todos los derechos reservados.
           </div>
         </div>
       </footer>

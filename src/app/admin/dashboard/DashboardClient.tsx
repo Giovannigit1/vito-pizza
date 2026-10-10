@@ -27,8 +27,7 @@ export function DashboardClient({ initialProducts }: Props) {
     setLoadingId(id);
     const newStatus = !currentStatus;
     
-    const { error } = await supabase
-      .from('products')
+    const { error } = await (supabase.from('products') as any)
       .update({ is_available: newStatus })
       .eq('id', id);
 
