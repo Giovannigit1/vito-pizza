@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--font-fraunces), serif;
+  
+  --color-brand-red: #c94b39;       /* Terracotta background */
+  --color-brand-cream: #fbe8b5;     /* Cream text */
+  --color-brand-dark: #2f1b13;      /* Dark brown/black for buttons/accents */
+  --color-brand-yellow: #f1c75c;    /* Yellow button */
+}
+
+:root {
+  --background: var(--color-brand-red);
+  --foreground: var(--color-brand-cream);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ticker Animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-ticker {
+  animation: ticker 15s linear infinite;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes steam {
+  0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0; filter: blur(10px); }
+  20% { opacity: 0.4; }
+  100% { transform: translateY(-150px) scale(2.5) rotate(20deg); opacity: 0; filter: blur(25px); }
+}
+
+.steam-particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: steam 5s infinite cubic-bezier(0.2, 0.6, 0.3, 1);
+  pointer-events: none;
+}
+
+.steam-1 { width: 40px; height: 40px; left: 40%; bottom: 50%; animation-delay: 0s; }
+.steam-2 { width: 50px; height: 50px; left: 55%; bottom: 45%; animation-delay: 1.2s; }
+.steam-3 { width: 35px; height: 35px; left: 35%; bottom: 60%; animation-delay: 2.5s; }
+.steam-4 { width: 45px; height: 45px; left: 65%; bottom: 55%; animation-delay: 3.8s; }
