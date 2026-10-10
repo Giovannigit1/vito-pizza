@@ -1,4 +1,6 @@
 [build.environment]
-  # La anon/publishable key de Supabase es pública por diseño (protegida por RLS)
-  # y Next.js la incrusta en el bundle por ser NEXT_PUBLIC_*.
-  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_ANON_KEY"
+  # Todas las variables del proyecto son NEXT_PUBLIC_* y públicas por diseño:
+  # Next.js las incrusta en el bundle. La anon key de Supabase está protegida por RLS,
+  # la URL de Supabase y el número de WhatsApp son datos públicos.
+  # Nunca agregar aquí claves secretas (p. ej. service_role).
+  SECRETS_SCAN_OMIT_KEYS = "NEXT_PUBLIC_SUPABASE_ANON_KEY,NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_WA_NUMBER"
