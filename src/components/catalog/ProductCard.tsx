@@ -71,10 +71,10 @@ export function ProductCard({ product, categoryName, sizes, index }: ProductCard
       </div>
 
       <div className="px-2 flex flex-col flex-1 pb-2">
-        <span className="text-[10px] font-black tracking-widest text-[#008c45]/50 uppercase mb-1">
+        <span className="text-[9px] md:text-[10px] font-black tracking-widest text-[#008c45]/50 uppercase mb-1">
           {categoryName}
         </span>
-        <h3 className="font-serif text-xl font-black text-[#008c45] leading-tight mb-2">
+        <h3 className="font-serif text-lg md:text-xl font-black text-[#008c45] leading-tight mb-1 md:mb-2">
           {product.name}
         </h3>
         <p className="text-xs text-[#008c45]/70 font-medium line-clamp-2 mb-4 flex-1">
@@ -89,7 +89,7 @@ export function ProductCard({ product, categoryName, sizes, index }: ProductCard
                 <button
                   key={size.id}
                   onClick={() => setSelectedSizeId(size.id)}
-                  className={`flex-1 text-[10px] font-black py-1.5 rounded-lg border-2 transition-all ${
+                  className={`flex-1 text-[9px] md:text-[10px] font-black py-1.5 md:py-2 rounded-lg border-2 transition-all ${
                     selectedSizeId === size.id 
                       ? 'bg-[#008c45] text-[#faecc0] border-[#008c45]'
                       : 'bg-transparent text-[#008c45] border-[#008c45]/20 hover:border-[#008c45]'
@@ -102,13 +102,13 @@ export function ProductCard({ product, categoryName, sizes, index }: ProductCard
           )}
           
           <div className="flex items-center justify-between">
-            <span className="text-sm font-black text-[#008c45]">
+            <span className="text-sm md:text-base font-black text-[#008c45]">
               {selectedSize ? formatCLP(selectedSize.price) : '--'}
             </span>
             <button
               onClick={handleAdd}
               disabled={!isAvailable}
-              className="bg-[#ce2b37] text-white font-bold text-xs py-2 px-4 rounded-full hover:bg-[#a83b2a] transition-all flex items-center gap-1 shadow-sm active:scale-95 disabled:opacity-50"
+              className="bg-[#ce2b37] text-white font-bold text-[10px] md:text-xs py-1.5 md:py-2 px-3 md:px-4 rounded-full hover:bg-[#a83b2a] transition-all flex items-center gap-1 shadow-sm active:scale-95 disabled:opacity-50"
             >
               <span>+ Sumar</span>
             </button>

@@ -15,6 +15,16 @@
   --foreground: var(--color-brand-cream);
 }
 
+html {
+  font-size: 90%; /* Scales down rem-based spacing and text on mobile (simulates 90% zoom) */
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 100%; /* Back to 100% on tablet and up */
+  }
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
